@@ -16,10 +16,16 @@ yargs.command({
             descript: 'Note title',
             demandOption: true, //the title option is required
             type: 'string', //supported type
+        },
+        body: {
+            descript: 'Note body',
+            demandOption: true,
+            type: 'string',
         }
     },
     handler: function (argv) {
-        console.log('Title: '+ argv.title);
+        console.log('Title: ' + argv.title);
+        console.log('Body: ' + argv.body);
     }
 })
 
