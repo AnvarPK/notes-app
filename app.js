@@ -12,12 +12,12 @@ yargs.command({
     describe: 'Add a new note',
     builder: {
         title: {
-            descript: 'Note title',
+            describe: 'Note title',
             demandOption: true, //the title option is required
             type: 'string', //supported type
         },
         body: {
-            descript: 'Note body',
+            describe: 'Note body',
             demandOption: true,
             type: 'string',
         }
@@ -31,8 +31,15 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a new note',
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
     handler: function (argv) {
-        console.log('Removing a new note!', argv);
+        notes.removeNote(argv.title)
     }
 })
 
