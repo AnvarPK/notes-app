@@ -1,6 +1,5 @@
 const yargs = require('yargs');
-const getNotes = require('./notes');
-const notes = getNotes();
+const notes = require('./notes');
 
 // const command = process.argv[2]
 
@@ -24,8 +23,7 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        console.log('Title: ' + argv.title);
-        console.log('Body: ' + argv.body);
+        notes.addNote(argv.title, argv.body);
     }
 })
 
